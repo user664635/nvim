@@ -4,6 +4,9 @@ kmp.set('n', '<A-j>', '<C-w>j')
 kmp.set('n', '<A-k>', '<C-w>k')
 kmp.set('n', '<A-l>', '<C-w>l')
 
+kmp.set('n', 't', ':sp\n:terminal\na')
+kmp.set('t', '<esc>', '')
+
 kmp.set('v', '<', '<gv')
 kmp.set('v', '>', '>gv')
 kmp.set('v', '<C-S-A>', '<esc>O/*<esc>gvo<esc>o*/<esc>')
