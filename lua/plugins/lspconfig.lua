@@ -24,6 +24,7 @@ return {
 				["rust-analyzer"] = {}
 			}
 		}
+		lspconfig.svls.setup {}
 
 		-- Global mappings.
 		-- See `:help vim.diagnostic.*` for documentation on any of the below functions
