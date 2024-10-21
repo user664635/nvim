@@ -6,6 +6,7 @@ return {
 		lspconfig.asm_lsp.setup {
 			filetypes = { "s", "S", "asm", "vmasm" }
 		}
+		lspconfig.bashls.setup{}
 		lspconfig.clangd.setup {
 			cmd = {
 				'clangd',
@@ -16,6 +17,7 @@ return {
 			filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" }
 
 		}
+		lspconfig.html.setup{}
 		lspconfig.lua_ls.setup {}
 		lspconfig.pyright.setup {}
 		lspconfig.rust_analyzer.setup {
