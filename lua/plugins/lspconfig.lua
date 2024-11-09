@@ -26,7 +26,9 @@ return {
 				["rust-analyzer"] = {}
 			}
 		}
-		lspconfig.svls.setup {}
+		lspconfig.svls.setup {
+			filetypes = { "v", "verilog", "systemverilog"}
+		}
 
 		-- Global mappings.
 		-- See `:help vim.diagnostic.*` for documentation on any of the below functions
