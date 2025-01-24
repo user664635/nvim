@@ -10,8 +10,6 @@ return {
 		vim.g.loaded_netrw = 1
 		vim.g.loaded_netrwPlugin = 1
 
-		vim.keymap.set('n', '<A-t>', ':NvimTreeToggle\n')
-
 		require("nvim-tree").setup({
 			diagnostics = {
 				enable = true,
