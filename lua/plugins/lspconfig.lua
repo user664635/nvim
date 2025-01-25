@@ -12,7 +12,6 @@ return {
 				'clangd',
 				'--enable-config',
 				'--clang-tidy',
-				'--fallback-style=\'{BasedOnStyle: LLVM, IndentWidth: 8}\''
 			},
 			filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" }
 
