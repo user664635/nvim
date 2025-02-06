@@ -3,9 +3,6 @@ return {
 	config = function()
 		-- Setup language servers.
 		local lspconfig = require("lspconfig")
-		lspconfig.asm_lsp.setup {
-			filetypes = { "s", "S", "asm", "vmasm" }
-		}
 		lspconfig.bashls.setup{}
 		lspconfig.clangd.setup {
 			cmd = {
