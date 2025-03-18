@@ -3,7 +3,7 @@ return {
 	config = function()
 		-- Setup language servers.
 		local lspconfig = require("lspconfig")
-		lspconfig.bashls.setup{}
+		lspconfig.bashls.setup {}
 		lspconfig.clangd.setup {
 			cmd = {
 				'clangd',
@@ -13,7 +13,7 @@ return {
 			filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" }
 
 		}
-		lspconfig.html.setup{}
+		lspconfig.html.setup {}
 		lspconfig.lua_ls.setup {}
 		lspconfig.pyright.setup {}
 		lspconfig.rust_analyzer.setup {
@@ -22,7 +22,9 @@ return {
 				["rust-analyzer"] = {}
 			}
 		}
-		lspconfig.wgsl_analyzer.setup{}
+		lspconfig.wgsl_analyzer.setup {
+			cmd = { 'wgsl-analyzer' }
+		}
 
 		-- Global mappings.
 		-- See `:help vim.diagnostic.*` for documentation on any of the below functions
