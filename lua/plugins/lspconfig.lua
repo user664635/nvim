@@ -22,6 +22,7 @@ return {
 				["rust-analyzer"] = {}
 			}
 		}
+		lspconfig.wgsl_analyzer.setup{}
 
 		-- Global mappings.
 		-- See `:help vim.diagnostic.*` for documentation on any of the below functions
