@@ -9,6 +9,7 @@ return {
 				'clangd',
 				'--enable-config',
 				'--clang-tidy',
+				'--clang-tidy-checks=modernize-*'
 			},
 			filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" }
 
