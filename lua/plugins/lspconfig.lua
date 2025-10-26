@@ -23,9 +23,6 @@ return {
 				["rust-analyzer"] = {}
 			}
 		}
-		lspconfig.svls.setup {
-			filetypes = { "v", "verilog", "systemverilog" }
-		}
 		lspconfig.wgsl_analyzer.setup {
 			cmd = { 'wgsl-analyzer' }
 		}
