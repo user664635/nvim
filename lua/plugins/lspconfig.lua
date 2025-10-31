@@ -50,49 +50,11 @@ return {
 			on_attach = on_attach,
 		})
 
-		-- Bash
-		vim.lsp.config("bashls", {})
-
-		-- Clangd
-		vim.lsp.config("clangd", {
-			cmd = {
-				"clangd",
-				"--enable-config",
-				"--clang-tidy",
-				"--clang-tidy-checks=modernize-*",
-			},
-			filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
-		})
-
-		-- HTML
-		vim.lsp.config("html", {})
-
-		-- Lua
-		vim.lsp.config("lua_ls", {})
-
-		-- Python (Pyright)
-		vim.lsp.config("pyright", {})
-
-		-- Rust
-		vim.lsp.config("rust_analyzer", {
-			settings = {
-				["rust-analyzer"] = {},
-			},
-		})
-
-		-- WGSL
-		vim.lsp.config("wgsl_analyzer", {
-			cmd = { "wgsl-analyzer" },
-		})
-
 		vim.lsp.enable({
-			"bashls",
 			"clangd",
 			"html",
-			"lua_ls",
 			"pyright",
 			"rust_analyzer",
-			"wgsl_analyzer",
 		})
 	end,
 }
