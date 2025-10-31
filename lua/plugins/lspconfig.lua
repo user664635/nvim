@@ -1,0 +1,98 @@
+return {
+	"neovim/nvim-lspconfig",
+	config = function()
+		vim.diagnostic.config({
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = "󰅙",
+					[vim.diagnostic.severity.WARN]  = "",
+					[vim.diagnostic.severity.HINT]  = "",
+					[vim.diagnostic.severity.INFO]  = "",
+				},
+				numhl = {
+					[vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+					[vim.diagnostic.severity.WARN]  = "DiagnosticSignWarn",
+					[vim.diagnostic.severity.HINT]  = "DiagnosticSignHint",
+					[vim.diagnostic.severity.INFO]  = "DiagnosticSignInfo",
+				},
+			},
+		})
+
+		vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
+		vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+		vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+		vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
+
+		local function on_attach(client, bufnr)
+			local opts = { buffer = bufnr }
+			vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
+
+			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+			vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+			vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
+			vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
+			vim.keymap.set("n", "<space>wl", function()
+				print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+			end, opts)
+			vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
+			vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
+			vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
+			vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+			vim.keymap.set("n", "<space>f", function()
+				vim.lsp.buf.format({ async = true })
+			end, opts)
+		end
+
+		vim.lsp.config("*", {
+			on_attach = on_attach,
+		})
+
+		-- Bash
+		vim.lsp.config("bashls", {})
+
+		-- Clangd
+		vim.lsp.config("clangd", {
+			cmd = {
+				"clangd",
+				"--enable-config",
+				"--clang-tidy",
+				"--clang-tidy-checks=modernize-*",
+			},
+			filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+		})
+
+		-- HTML
+		vim.lsp.config("html", {})
+
+		-- Lua
+		vim.lsp.config("lua_ls", {})
+
+		-- Python (Pyright)
+		vim.lsp.config("pyright", {})
+
+		-- Rust
+		vim.lsp.config("rust_analyzer", {
+			settings = {
+				["rust-analyzer"] = {},
+			},
+		})
+
+		-- WGSL
+		vim.lsp.config("wgsl_analyzer", {
+			cmd = { "wgsl-analyzer" },
+		})
+
+		vim.lsp.enable({
+			"bashls",
+			"clangd",
+			"html",
+			"lua_ls",
+			"pyright",
+			"rust_analyzer",
+			"wgsl_analyzer",
+		})
+	end,
+}
