@@ -7,6 +7,11 @@ kmp.set('n', '<A-l>', '<C-w>l')
 kmp.set('n', 't', ':sp\n:terminal\na')
 kmp.set('t', '<esc>', '')
 
+kmp.set("n", "<space>e", vim.diagnostic.open_float)
+kmp.set("n", "[d", vim.diagnostic.goto_prev)
+kmp.set("n", "]d", vim.diagnostic.goto_next)
+kmp.set("n", "<space>q", vim.diagnostic.setloclist)
+
 kmp.set('v', '<', '<gv')
 kmp.set('v', '>', '>gv')
 kmp.set('v', '<C-S-A>', '<esc>O/*<esc>gvo<esc>o*/<esc>')
