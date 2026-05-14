@@ -22,6 +22,7 @@ return {
 
 		vim.lsp.enable({
 			"clangd",
+			"denols",
 			"html",
 			"pyright",
 			"lua_ls",
