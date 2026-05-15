@@ -18,4 +18,4 @@ vim.opt.swapfile = false
 vim.opt.tabstop = 8
 vim.opt.termguicolors = true
 vim.opt.undofile = true
-vim.opt.fileencodings = { "utf-8", "gbk", "gb18030", "big5", "latin1" }
+vim.opt.fileencodings = { "utf-8","utf-16le", "utf-16", "gb18030", "big5", "euc-jp", "latin1"}
