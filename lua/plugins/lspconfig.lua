@@ -17,9 +17,6 @@ return {
 				},
 			},
 		})
-
-
-
 		vim.lsp.enable({
 			"clangd",
 			"denols",
