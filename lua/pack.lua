@@ -18,6 +18,6 @@ local blink = require("blink.cmp")
 blink.build():pwait()
 blink.setup()
 vim.cmd.colorscheme('tokyonight-night')
---require("lualine").setup()
+require("lualine").setup()
 
 vim.g.lean_config = { mappings = true }
