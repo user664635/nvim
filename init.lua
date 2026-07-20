@@ -1,3 +1,6 @@
-require("opts")
-require("keymaps")
-require("lazyinit")
+require 'opt'
+require 'func'
+require 'key'
+require 'lsp'
+require 'pack'
+
