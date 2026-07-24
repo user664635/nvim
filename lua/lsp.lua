@@ -9,16 +9,16 @@ local blink = require("blink.cmp")
 blink.build():pwait()
 blink.setup({ keymap = { preset = 'super-tab' } })
 
-vim.lsp.config.lua_ls = {
-	cmd = { 'lua-language-server' },
-	filetypes = { 'lua' },
+vim.lsp.config('*', {
 	root_markers = { '.git' },
+})
+vim.lsp.config('lua_ls', {
 	settings = {
 		Lua = {
 			runtime = { version = 'LuaJIT' },
 			diagnostics = { globals = { 'vim' } },
 		}
 	}
-}
+})
 vim.lsp.enable 'lua_ls'
 vim.lsp.enable 'clangd'
