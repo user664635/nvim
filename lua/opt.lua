@@ -14,8 +14,6 @@ vim.o.expandtab = false
 vim.o.fixendofline = false
 vim.o.laststatus = 0
 vim.o.list = true
-vim.o.number = true
-vim.o.relativenumber = true
 vim.o.scrolloff = 12
 vim.o.shiftwidth = 4
 vim.o.showcmd = true
@@ -28,6 +26,9 @@ vim.o.termguicolors = true
 vim.o.undofile = true
 
 vim.opt.fileencodings = { "utf-8", "utf-16le", "utf-16", "sjis", "gb18030", "big5", "euc-jp", "latin1" }
+
+vim.opt.laststatus = 3
+vim.opt.statusline = '%f | %y%m%r%h | %{&encoding} | %O %B%=%l/%L | %c'
 
 vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, { callback = function() vim.cmd("wa") end })
 vim.api.nvim_create_autocmd("BufEnter",
