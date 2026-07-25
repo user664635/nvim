@@ -6,6 +6,7 @@ kmp.set('n', '<A-l>', '<C-w>l')
 
 kmp.set('n', 't', ':sp\n:terminal\na')
 kmp.set('t', '<esc>', '')
+kmp.set("n", "<space>k", ':Inspect\n')
 
 kmp.set("n", "<space>e", vim.diagnostic.open_float)
 kmp.set("n", "<space>q", vim.diagnostic.setloclist)

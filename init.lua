@@ -1,4 +1,5 @@
 require 'opt'
+require 'color'
 require 'key'
 require 'base'
 require 'lsp'
