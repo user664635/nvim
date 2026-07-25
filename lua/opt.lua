@@ -27,8 +27,5 @@ vim.o.undofile = true
 vim.opt.fileencodings = { "utf-8", "utf-16le", "utf-16", "sjis", "gb18030", "big5", "euc-jp", "latin1" }
 
 vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, { callback = function() vim.cmd("wa") end })
-vim.api.nvim_create_autocmd("BufEnter", {
-	callback = function()
-		if vim.bo.buftype == "" and not vim.bo.filetype == "" then vim.cmd("e") end
-	end
-})
+vim.api.nvim_create_autocmd("BufEnter",
+	{ callback = function() if vim.bo.buftype == "" and vim.bo.filetype ~= "" then vim.cmd("e") end end })
