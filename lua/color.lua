@@ -2,9 +2,9 @@ vim.cmd.colorscheme('vim')
 local function hl(name, val) vim.api.nvim_set_hl(0, name, val) end
 hl("Type", { fg = '#00ff00', italic = true })
 hl("Structure", { fg = '#b0ffb0', italic = true })
-hl("@lsp.type.class", { fg = '#a0ffa0', italic = true})
-hl("@lsp.type.enum", { fg = '#80ff80', italic = true })
-hl("@lsp.type.type", { fg = '#40ff40', italic = true})
+hl("@lsp.type.class", { fg = '#a0ffa0'})
+hl("@lsp.type.enum", { fg = '#80ff80'})
+hl("@lsp.type.type", { fg = '#40ff40'})
 
 hl("Constant", { fg = '#ffc000' })
 hl("@lsp.type.enumMember", { fg = '#ffc080' })
