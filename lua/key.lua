@@ -1,11 +1,13 @@
 local kmp = vim.keymap
-kmp.set({ 'n', 't' }, '<A-h>', function() vim.cmd('wincmd h') end)
-kmp.set({ 'n', 't' }, '<A-j>', function() vim.cmd('wincmd j') end)
-kmp.set({ 'n', 't' }, '<A-k>', function() vim.cmd('wincmd k') end)
-kmp.set({ 'n', 't' }, '<A-l>', function() vim.cmd('wincmd l') end)
-kmp.set({ 'n', 't' }, '<A-w>', function() vim.cmd('wincmd w') end)
+local function cb(cmd) return function() vim.cmd(cmd) end end
+kmp.set({ 'n', 't' }, '<A-h>', cb('wincmd h'))
+kmp.set({ 'n', 't' }, '<A-j>', cb('wincmd j'))
+kmp.set({ 'n', 't' }, '<A-k>', cb('wincmd k'))
+kmp.set({ 'n', 't' }, '<A-l>', cb('wincmd l'))
+kmp.set({ 'n', 't' }, '<A-w>', cb('wincmd w'))
 
-kmp.set('n', 't', ':sp\n:terminal\na')
+kmp.set('n', 't', ':20sp|term\na')
+kmp.set('t', '<esc>', '')
 kmp.set("n", "<space>k", ':Inspect\n')
 
 kmp.set("n", "<space>e", vim.diagnostic.open_float)
