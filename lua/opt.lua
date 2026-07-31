@@ -24,6 +24,7 @@ vim.o.swapfile = false
 vim.o.tabstop = 4
 vim.o.termguicolors = true
 vim.o.undofile = true
+vim.o.wrap = false
 
 vim.opt.fileencodings = { "utf-8", "utf-16le", "utf-16", "sjis", "gb18030", "big5", "euc-jp", "latin1" }
 
